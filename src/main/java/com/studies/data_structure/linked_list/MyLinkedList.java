@@ -9,10 +9,10 @@ package com.studies.data_structure.linked_list;
    outro Nó depois dele.
 *
 * */
-public class MyLinkedList {
+public class MyLinkedList<T> {
 
-    private Node head;
-    private Node last;
+    private Node<T> head;
+    private Node<T> last;
     private int size;
 
     public MyLinkedList() {
@@ -21,11 +21,11 @@ public class MyLinkedList {
         this.size = 0;
     }
 
-    public Node getHead() {
+    public Node<T> getHead() {
         return this.head;
     }
 
-    public Node getLast() {
+    public Node<T> getLast() {
         return this.last;
     }
 
@@ -33,8 +33,8 @@ public class MyLinkedList {
         return this.size;
     }
 
-    public void addNode(String value) {
-        Node node = new Node(value);
+    public void addNode(T value) {
+        Node<T> node = new Node<T>(value);
 
         if (this.head == null && this.last == null) {
             this.head = node;
@@ -47,17 +47,17 @@ public class MyLinkedList {
         this.size++;
     }
 
-    private boolean isHeadNode(Node node) {
+    private boolean isHeadNode(Node<T> node) {
         return this.head == node;
     }
 
-    private boolean isLastNode(Node node) {
+    private boolean isLastNode(Node<T> node) {
         return this.last == node;
     }
 
-    public void removeNode(String value) {
-        Node previous = null;
-        Node actual = this.head;
+    public void removeNode(T value) {
+        Node<T> previous = null;
+        Node<T> actual = this.head;
 
         for (int i = 0; i < size; i++) {
             if (actual.getValue().equals(value)) {
@@ -85,8 +85,8 @@ public class MyLinkedList {
         }
     }
 
-    public Node getNodeByPos(int position) {
-        Node actual = this.head;
+    public Node<T> getNodeByPos(int position) {
+        Node<T> actual = this.head;
 
         if (position > this.size - 1) {
             throw new RuntimeException("Index invalid");
@@ -101,8 +101,8 @@ public class MyLinkedList {
         return actual;
     }
 
-    public Node getNodeByValue(String value) {
-        Node actual = this.head;
+    public Node<T> getNodeByValue(T value) {
+        Node<T> actual = this.head;
 
         while (actual != null) {
             if (actual.getValue().equals(value)) {

@@ -1,27 +1,36 @@
 package com.studies.data_structure.linked_list;
 
-import java.util.LinkedList;
-
 public class ProgramLinkedList {
 
     public static void main(String[] args) {
-        MyLinkedList list = new MyLinkedList();
+        MyLinkedList<String> listNames = new MyLinkedList<String>();
+        MyLinkedList<Integer> salarys = new MyLinkedList<Integer>();
+        MyLinkedList<Boolean> listBool = new MyLinkedList<Boolean>();
 
-        list.addNode("Saulo");
-        list.addNode("Gabi");
-        list.addNode("Artur");
-        list.addNode("Gislene");
+        listNames.addNode("Saulo");
+        salarys.addNode(1000);
+        listBool.addNode(false);
 
-        list.removeNode("Saulo");
-        list.removeNode("Gabi");
-        list.removeNode("Artur");
-        list.removeNode("Gislene");
+        listNames.addNode("Gabi");
+        salarys.addNode(500);
+        listBool.addNode(true);
 
-        list.addNode("Saulo");
+        listNames.addNode("Artur");
+        salarys.addNode(1500);
+        listBool.addNode(false);
 
-        System.out.println("Tamanho: " + list.getSize());
-        for (int i = 0; i < list.getSize(); i++) {
-            System.out.println(list.getNodeByPos(i).getValue());
+        System.out.println("Quant. Nomes: " + listNames.getSize());
+        System.out.println("Quant. Salario: " + salarys.getSize());
+        System.out.println("Quant. Boolean: " + listBool.getSize());
+        for (int i = 0; i < listNames.getSize(); i++) {
+            System.out.println("");
+            System.out.println(listNames.getNodeByPos(i).getValue());
+            for (int s = i; s <= i; s++) {
+                System.out.println(salarys.getNodeByPos(s).getValue());
+                for (int b = s; b <= s; b++) {
+                    System.out.println(listBool.getNodeByPos(b).getValue());
+                }
+            }
         }
     }
 
