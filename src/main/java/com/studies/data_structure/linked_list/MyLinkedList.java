@@ -114,4 +114,8 @@ public class MyLinkedList<T> {
         throw new RuntimeException("Not Found Element in Linked List");
     }
 
+    public IteratorLinkedList<T> iterator() {
+        return new IteratorLinkedList<T>(this.head);
+    }
+
 }
